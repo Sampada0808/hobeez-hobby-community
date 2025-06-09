@@ -11,7 +11,7 @@ struct SignUp: View {
                 .overlay {
                     Image("SplashScreen1")
                         .resizable()
-                        .frame(width: 60, height: 60)
+                        .frame(width: 70, height: 60)
                 }
                 .padding(.vertical, 30)
             Text("Sign Up")
@@ -21,11 +21,11 @@ struct SignUp: View {
                 .font(.system(size: 20))
                 .foregroundStyle(Color(uiColor: UIColor.lightGray))
                 .padding(.bottom, 20)
-            AuthTextField(iconName: "person", typeOfTextField: "Name", placeholderOfTextField: "Enter your Name", text: $signUpViewModel.userName)
+            AuthTextField(iconName: "person", typeOfTextField: "UserName", placeholderOfTextField: "Enter your username", text: $signUpViewModel.userName)
             AuthTextField(iconName: "envelope", typeOfTextField: "Email", placeholderOfTextField: "Enter your email", text: $signUpViewModel.email)
-                .padding(5)
-            AuthTextField(iconName: "lock", typeOfTextField: "Password", placeholderOfTextField: "Enter your Password", text: $signUpViewModel.password, isPassword: true, showPassword: $signUpViewModel.showPassword)
-                .padding(.bottom, 10)
+                .padding(10)
+            AuthTextField(iconName: "lock", typeOfTextField: "Password", placeholderOfTextField: "Enter your password", text: $signUpViewModel.password, isPassword: true, showPassword: $signUpViewModel.showPassword)
+                .padding(.bottom, 15)
             Button("Sign Up") {
                 
             }

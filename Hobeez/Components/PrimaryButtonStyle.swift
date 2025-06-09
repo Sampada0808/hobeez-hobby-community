@@ -11,5 +11,6 @@ struct PrimaryButtonStyle : ButtonStyle {
             .background(.primaryBg)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: .primaryBg.opacity(0.8),radius: 5, x: 5, y: 5)
     }
 }

@@ -11,7 +11,7 @@ struct Login: View {
                 .overlay {
                     Image("SplashScreen1")
                         .resizable()
-                        .frame(width: 60, height: 60)
+                        .frame(width: 70, height: 60)
                 }
                 .padding(.vertical, 30)
             Text("Login")
@@ -23,7 +23,8 @@ struct Login: View {
                 .padding(.bottom, 20)
             AuthTextField(iconName: "envelope", typeOfTextField: "Email", placeholderOfTextField: "Enter your email", text: $loginViewModel.email)
             AuthTextField(iconName: "lock", typeOfTextField: "Password", placeholderOfTextField: "Enter your Password", text: $loginViewModel.password, isPassword: true, showPassword: $loginViewModel.showPassword)
-                .padding(5)
+                .padding(.top, 10)
+                .padding(.bottom, 15)
             Button("Sign In", action: {
                 loginViewModel.showSignUpPage = true
             })
@@ -37,6 +38,7 @@ struct Login: View {
                        
                 }
                 .foregroundStyle(.primaryBg)
+                
             }
             .padding(.top, 10)
             
