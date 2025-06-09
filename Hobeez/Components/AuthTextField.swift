@@ -6,7 +6,7 @@ struct AuthTextField: View {
     let placeholderOfTextField: String
     @Binding var text: String
     var isPassword: Bool = false
-    var showPassword: Binding<Bool>? = nil // Optional binding
+    var showPassword: Binding<Bool>? = nil 
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)

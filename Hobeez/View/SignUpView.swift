@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SignUp: View {
+struct SignUpView: View {
     @State var signUpViewModel = SignUpViewModel()
     @Environment(\.dismiss) var dismiss
     var body: some View {
@@ -9,7 +9,7 @@ struct SignUp: View {
                 .fill(.primaryBg.opacity(0.4))
                 .frame(width: 90, height: 90)
                 .overlay {
-                    Image("SplashScreen1")
+                    Image("BeeIcon")
                         .resizable()
                         .frame(width: 70, height: 60)
                 }
@@ -26,8 +26,8 @@ struct SignUp: View {
                 .padding(10)
             AuthTextField(iconName: "lock", typeOfTextField: "Password", placeholderOfTextField: "Enter your password", text: $signUpViewModel.password, isPassword: true, showPassword: $signUpViewModel.showPassword)
                 .padding(.bottom, 15)
-            Button("Sign Up") {
-                
+            Button("Next") {
+                signUpViewModel.showHobby = true
             }
             .buttonStyle(PrimaryButtonStyle())
             HStack {
@@ -43,11 +43,14 @@ struct SignUp: View {
             .padding(.top, 10)
             Spacer()
         }
+        .fullScreenCover(isPresented: $signUpViewModel.showHobby) {
+            HobbySelectionView()
+        }
         
         
     }
 }
 
 #Preview {
-    SignUp()
+    SignUpView()
 }

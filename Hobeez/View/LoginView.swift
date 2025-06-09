@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Login: View {
+struct LoginView: View {
     @State var loginViewModel =  LoginViewModel()
    
     var body: some View {
@@ -9,7 +9,7 @@ struct Login: View {
                 .fill(.primaryBg.opacity(0.4))
                 .frame(width: 90, height: 90)
                 .overlay {
-                    Image("SplashScreen1")
+                    Image("BeeIcon")
                         .resizable()
                         .frame(width: 70, height: 60)
                 }
@@ -46,11 +46,11 @@ struct Login: View {
             Spacer()
         }
         .fullScreenCover(isPresented: $loginViewModel.showSignUpPage, content: {
-            SignUp()
+            SignUpView()
         })
     }
 }
 
 #Preview {
-    Login()
+    LoginView()
 }

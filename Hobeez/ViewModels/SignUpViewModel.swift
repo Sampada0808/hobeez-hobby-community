@@ -7,4 +7,5 @@ class SignUpViewModel {
     var email : String = ""
     var password : String = ""
     var showPassword : Bool = false
+    var showHobby : Bool = false
 }
