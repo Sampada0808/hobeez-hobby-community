@@ -2,23 +2,51 @@ import SwiftUI
 
 @main
 struct HobeezApp: App {
+    @State var tabManager = TabManager()
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+    @AppStorage("isUserLoggedIn") private var isUserLoggedIn = false
+
     var body: some Scene {
         WindowGroup {
             ZStack {
-                if hasCompletedOnboarding{
-                    LoginView()
+                if hasCompletedOnboarding {
+                    if isUserLoggedIn {
+                        TabView(selection: $tabManager.selectedTab) {
+                            HomePage()
+                                .environment(tabManager)
+                                .tabItem {
+                                    Image(systemName: "house.fill")
+                                    Text("Home")
+                                }
+                                .tag(1)
+                            CommunityPageView()
+                                .environment(tabManager)
+                                .tabItem {
+                                    Image(systemName: "house.fill")
+                                    Text("Community")
+                                }
+                                .tag(2)
+
+                            ProfilePageView()
+                                .tabItem {
+                                    Image(systemName: "person.fill")
+                                    Text("Profile")
+                                }
+                                .tag(3)
+                        }
+                        .environment(tabManager)
                         .transition(.move(edge: .trailing))
-                        
-                }else{
+                    } else {
+                        LoginView()
+                            .transition(.move(edge: .trailing))
+                    }
+                } else {
                     OnBoardingView()
                         .transition(.move(edge: .leading))
                 }
             }
-            .animation(.easeInOut(duration: 0.5), value: hasCompletedOnboarding)
-            
-            
+            .animation(.easeInOut(duration: 0.5), value: isUserLoggedIn)
         }
     }
-    
 }
+

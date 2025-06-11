@@ -3,6 +3,7 @@ import SwiftUI
 struct ProfileCustomisationView: View {
     @State var viewModel = ProfileCustomisationViewModel()
     @StateObject var imageLoaderViewModel = ImageLoaderViewModel()
+    @AppStorage("isUserLoggedIn") var isUserLoggedIn = true
     var body: some View {
         VStack{
             Text("Profile")
@@ -59,13 +60,14 @@ struct ProfileCustomisationView: View {
             }
             .padding(.horizontal)
             Button {
-                
+                isUserLoggedIn = true
             } label: {
                 Text("Finish")
             }
             .padding(20)
             .buttonStyle(PrimaryButtonStyle())
             Button {
+                isUserLoggedIn = true
             } label: {
                 Text("Skip for now")
                     .font(.system(size: 20))

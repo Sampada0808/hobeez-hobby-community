@@ -9,4 +9,5 @@ class ProfileCustomisationViewModel{
     var showImageOptions =  false
     var showLibrary = false
     var showCamera = false
+    var showHomePage = false
 }

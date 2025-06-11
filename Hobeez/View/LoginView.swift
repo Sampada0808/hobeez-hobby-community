@@ -2,6 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     @State var loginViewModel =  LoginViewModel()
+    @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
    
     var body: some View {
         VStack {
@@ -26,7 +27,7 @@ struct LoginView: View {
                 .padding(.top, 10)
                 .padding(.bottom, 15)
             Button("Sign In", action: {
-                loginViewModel.showSignUpPage = true
+                isUserLoggedIn = true
             })
             .buttonStyle(PrimaryButtonStyle())
             HStack {

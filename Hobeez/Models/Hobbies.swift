@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-enum Hobbies: String, CaseIterable, Identifiable {
+enum Hobbies: String, CaseIterable, Identifiable, Hashable {
     var id: String { rawValue }
 
     case animation, art, baking, music, dance, gameDev, gardening, photography, reading

@@ -7,5 +7,6 @@ class LoginViewModel {
     var password : String = ""
     var showPassword : Bool = false
     var showSignUpPage : Bool = false
+    var showHomePage : Bool = false
     
 }

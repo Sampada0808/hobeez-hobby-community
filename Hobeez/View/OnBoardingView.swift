@@ -2,6 +2,7 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+    @State var viewModel = OnBoardingViewModel()
     
     var body: some View {
         VStack {
@@ -26,11 +27,15 @@ struct OnBoardingView: View {
             Spacer()
             Button {
                 hasCompletedOnboarding = true
+                viewModel.showLogin = true
             } label: {
                 Text("Get Started")
             }
             .padding()
             .buttonStyle(PrimaryButtonStyle())
+            .fullScreenCover(isPresented: $viewModel.showLogin) {
+                LoginView()
+            }
         }
     }
 }
