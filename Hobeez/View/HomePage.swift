@@ -157,12 +157,10 @@ struct HomePage: View {
                     }
                 }
                 else {
-                    VStack(alignment: .center){
-                        Spacer()
-                        Text("Still in Implementation")
-                            .font(.system(size: 30))
-                            .padding(.leading, 60 )
-                        Spacer()
+                    ScrollView(.vertical) {
+                        ForEach(dummyPosts) { post in
+                            ContentPost(post: post)
+                        }
                     }
                 }
                 
