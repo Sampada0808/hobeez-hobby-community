@@ -28,6 +28,9 @@ struct CommunityPageView: View {
                         ForEach(0..<20, id: \.self) { _ in
                             VStack {
                                 CircularImage(imageName: "ArtistPerson", imageSize: 80)
+                                    .onTapGesture {
+                                        viewModel.showProfile = true
+                                    }
                                 Text("John")
                             }
                         }
@@ -74,6 +77,9 @@ struct CommunityPageView: View {
             .fullScreenCover(isPresented: $viewModel.showChat) {
                 ChatView(message: .constant(""))
                     
+            }
+            .sheet(isPresented: $viewModel.showProfile) {
+                ProfileDetailView()
             }
         }
     }

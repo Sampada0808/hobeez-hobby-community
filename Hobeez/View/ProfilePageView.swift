@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProfilePageView: View {
-    @State private var selectedTab: Tab = .challenges
+    @State private var selectedTab: Tab = .saved
     let columns = Array(repeating: GridItem(.flexible(), spacing: 2), count: 3)
     
     var body: some View {
@@ -122,6 +122,28 @@ struct ProfilePageView: View {
                         }
                     }
                     .padding(.top)
+                }
+            }
+            else{
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 0) {
+                        ForEach(0..<20, id: \.self) { _ in
+                            Image("artBanner")
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fill)
+                                .frame(width: UIScreen.main.bounds.width / 3 - 4, height: UIScreen.main.bounds.width / 3 - 4)
+                                .clipped()
+                                .overlay(alignment: .topTrailing) {
+                                    Image(systemName: "heart.fill")
+                                        .resizable()
+                                        .foregroundStyle(Color.accent)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20)
+                                        .padding(5)
+                                    
+                                }
+                        }
+                    }
                 }
             }
 

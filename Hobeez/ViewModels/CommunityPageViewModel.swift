@@ -6,4 +6,5 @@ class CommunityPageViewModel {
     var searchName: String = ""
     var showCreateGroupModel : Bool = false
     var showChat : Bool = false
+    var showProfile : Bool = false
 }

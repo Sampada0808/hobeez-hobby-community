@@ -8,4 +8,5 @@ class HomePageViewModel {
     var showAllPosts = false
     var showCreatePost = false
     var selectedContentType : ContentTypes = .forYou
+    var showDetailedPost = false
 }

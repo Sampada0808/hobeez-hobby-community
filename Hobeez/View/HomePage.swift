@@ -145,6 +145,9 @@ struct HomePage: View {
                                         .foregroundColor(.gray)
                                         .lineLimit(2)
                                 }
+                                .onTapGesture {
+                                    viewModel.showDetailedPost = true
+                                }
                                 .padding()
                                 .background(
                                     RoundedRectangle(cornerRadius: 20)
@@ -170,6 +173,9 @@ struct HomePage: View {
             }
             .sheet(isPresented: $viewModel.showCreatePost, content: {
                 CreatePostView()
+            })
+            .sheet(isPresented: $viewModel.showDetailedPost, content: {
+                PostDetailView(comment: .constant(""))
             })
             .navigationDestination(isPresented: $viewModel.showChallengeDetailView) {
                 ChallengeDetailView()

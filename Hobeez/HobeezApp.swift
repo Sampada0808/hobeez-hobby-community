@@ -26,13 +26,19 @@ struct HobeezApp: App {
                                     Text("Community")
                                 }
                                 .tag(2)
-
+                            ChallengeView()
+                                .environment(tabManager)
+                                .tabItem {
+                                    Image(systemName: "house.fill")
+                                    Text("Community")
+                                }
+                                .tag(3)
                             ProfilePageView()
                                 .tabItem {
                                     Image(systemName: "person.fill")
                                     Text("Profile")
                                 }
-                                .tag(3)
+                                .tag(4)
                         }
                         .environment(tabManager)
                         .transition(.move(edge: .trailing))
