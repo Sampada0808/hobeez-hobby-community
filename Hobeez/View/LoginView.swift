@@ -1,4 +1,5 @@
 import SwiftUI
+import CometChatUIKitSwift
 
 struct LoginView: View {
     @State var loginViewModel =  LoginViewModel()
@@ -28,6 +29,17 @@ struct LoginView: View {
                 .padding(.bottom, 15)
             Button("Sign In", action: {
                 isUserLoggedIn = true
+                let cometChatUID = "cometchat-uid-3"
+                    CometChatUIKit.login(uid: cometChatUID) { result in
+                        switch result {
+                        case .success:
+                            print("✅ CometChat login succeeded")
+                        case .onError(let error):
+                            print("❌ CometChat login failed:  \(error.errorDescription)")
+                        @unknown default:
+                            break
+                        }
+                    }
             })
             .buttonStyle(PrimaryButtonStyle())
             HStack {

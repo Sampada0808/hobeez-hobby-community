@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		27E3B8C12E07D6EA00B0FB3A /* CometChatUIKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 27E3B8C02E07D6EA00B0FB3A /* CometChatUIKitSwift */; };
+		27E3B8C42E07D98D00B0FB3A /* CometChatSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 27E3B8C32E07D98D00B0FB3A /* CometChatSDK */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		27D789372DF543B000ED6824 /* Hobeez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hobeez.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E3B8C42E07D98D00B0FB3A /* CometChatSDK in Frameworks */,
+				27E3B8C12E07D6EA00B0FB3A /* CometChatUIKitSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = Hobeez;
 			packageProductDependencies = (
+				27E3B8C02E07D6EA00B0FB3A /* CometChatUIKitSwift */,
+				27E3B8C32E07D98D00B0FB3A /* CometChatSDK */,
 			);
 			productName = Hobeez;
 			productReference = 27D789372DF543B000ED6824 /* Hobeez.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 27D7892E2DF543B000ED6824;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				27E3B8BF2E07D6EA00B0FB3A /* XCRemoteSwiftPackageReference "cometchat-uikit-ios" */,
+				27E3B8C22E07D98D00B0FB3A /* XCRemoteSwiftPackageReference "chat-sdk-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 27D789382DF543B000ED6824 /* Products */;
 			projectDirPath = "";
@@ -176,7 +189,7 @@
 				DEVELOPMENT_TEAM = V6YMXF57WP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -240,7 +253,7 @@
 				DEVELOPMENT_TEAM = V6YMXF57WP;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -349,6 +362,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27E3B8BF2E07D6EA00B0FB3A /* XCRemoteSwiftPackageReference "cometchat-uikit-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cometchat/cometchat-uikit-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.4;
+			};
+		};
+		27E3B8C22E07D98D00B0FB3A /* XCRemoteSwiftPackageReference "chat-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cometchat/chat-sdk-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.61;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27E3B8C02E07D6EA00B0FB3A /* CometChatUIKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27E3B8BF2E07D6EA00B0FB3A /* XCRemoteSwiftPackageReference "cometchat-uikit-ios" */;
+			productName = CometChatUIKitSwift;
+		};
+		27E3B8C32E07D98D00B0FB3A /* CometChatSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27E3B8C22E07D98D00B0FB3A /* XCRemoteSwiftPackageReference "chat-sdk-ios" */;
+			productName = CometChatSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27D7892F2DF543B000ED6824 /* Project object */;
 }

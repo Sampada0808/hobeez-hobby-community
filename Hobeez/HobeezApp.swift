@@ -5,6 +5,7 @@ struct HobeezApp: App {
     @State var tabManager = TabManager()
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     @AppStorage("isUserLoggedIn") private var isUserLoggedIn = false
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
@@ -22,15 +23,15 @@ struct HobeezApp: App {
                             CommunityPageView()
                                 .environment(tabManager)
                                 .tabItem {
-                                    Image(systemName: "house.fill")
+                                    Image(systemName: "rectangle.3.group.bubble.fill")
                                     Text("Community")
                                 }
                                 .tag(2)
                             ChallengeView()
                                 .environment(tabManager)
                                 .tabItem {
-                                    Image(systemName: "house.fill")
-                                    Text("Community")
+                                    Image(systemName: "trophy.fill")
+                                    Text("Challenge")
                                 }
                                 .tag(3)
                             ProfilePageView()
