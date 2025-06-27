@@ -29,7 +29,7 @@ struct LoginView: View {
                 .padding(.bottom, 15)
             Button("Sign In", action: {
                 isUserLoggedIn = true
-                let cometChatUID = "cometchat-uid-3"
+                let cometChatUID = "cometchat-uid-5"
                     CometChatUIKit.login(uid: cometChatUID) { result in
                         switch result {
                         case .success:
